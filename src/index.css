@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Glassmorphism helpers */
+.glass {
+  background: linear-gradient(135deg, rgba(255,255,255,0.7), rgba(255,255,255,0.35));
+  border: 1px solid rgba(255,255,255,0.25);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.dark .glass {
+  background: linear-gradient(135deg, rgba(30,41,59,0.65), rgba(30,41,59,0.35));
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.card {
+  @apply rounded-2xl p-5 shadow-glass bg-white/80 dark:bg-slate-800/70 border border-white/30 dark:border-white/10;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 font-medium transition focus:outline-none focus:ring-2 focus:ring-brand-400;
+}
+
+.btn-primary {
+  @apply bg-brand-600 hover:bg-brand-700 text-white;
+}
+
+.btn-ghost {
+  @apply bg-white/70 hover:bg-white/90 dark:bg-slate-800/70 dark:hover:bg-slate-800/90 border border-white/40 dark:border-white/10 text-slate-700 dark:text-slate-200;
+}
+
+.badge {
+  @apply inline-flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-medium;
+}
+
+.badge-green {
+  @apply bg-emerald-100 text-emerald-800 dark:bg-emerald-500/20 dark:text-emerald-200;
+}
+
+.badge-blue {
+  @apply bg-blue-100 text-blue-800 dark:bg-blue-500/20 dark:text-blue-200;
+}
+
+.badge-gray {
+  @apply bg-slate-100 text-slate-800 dark:bg-slate-500/20 dark:text-slate-200;
+}
+
+
+/* Ensure readable default text color on light theme */
+html, body { color: #0f172a; }
+.dark html, .dark body { color: #ffffff; }
+
+/* Utility: base inputs/buttons dark-mode aware */
+.input { @apply bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white rounded-xl px-3 py-2; }
+.btn { @apply inline-flex items-center justify-center rounded-xl px-3 py-2 font-medium; }
+.btn-primary { @apply bg-brand-600 text-white hover:bg-brand-700; }
